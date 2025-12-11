@@ -4,7 +4,7 @@ interface PageHeaderProps {
   title: string; // main title
 }
 
-export default function PageTitle({
+export default function SectionTitle({
   title,
 }: PageHeaderProps) {
   return (
