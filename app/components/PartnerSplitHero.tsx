@@ -48,7 +48,7 @@ export default function PartnerSplitHero() {
                                 <Link href={item.buttonLink}>
                                     <Button
                                         variant="primary"
-                                        className="!border-white text-white hover:bg-white hover:!text-[#5D9732] !py-[22px] min-w-40"
+                                        className="!border-white text-white hover:bg-white hover:!text-[#5D9732] 2xl:!py-[22px] min-w-40"
                                     >
                                         {item.buttonText}
                                     </Button>
