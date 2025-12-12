@@ -6,7 +6,7 @@ const variants = {
   secondary:
     "bg-[#5D9732] rounded-[8px] tracking-[1.4px] px-6 py-4 2xl:px-[30px] xl:py-[18px] leading-none uppercase text-sm font-medium text-white hover:bg-[#3D7303]",
   btnWhite:
-    "bg-white rounded-[8px] tracking-[1.4px] p-6 leading-none uppercase text-sm font-medium text-[#5D9732]",
+    "bg-white rounded-[8px] tracking-[1.4px] p-4 2xl:p-6 leading-none uppercase text-sm font-medium text-[#5D9732]",
 };
 
 type ButtonVariant = keyof typeof variants;

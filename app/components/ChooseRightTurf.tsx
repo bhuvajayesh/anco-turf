@@ -1,4 +1,5 @@
 import { useState } from "react";
+import SectionTitle from "./SectionTitle";
 
 const chooseTurf = [
   { id: 'shade-tolerance', label: 'High Shade tolerance' },
@@ -22,8 +23,8 @@ export default function ChooseRightTurf() {
     <div className="bg-[url(/images/choose-bg.jpg)] bg-cover">
       <div className="container mx-auto">
         <div className="text-center py-[60px] text-white">
-          <span className="text-[22px] font-medium tracking-[1.4px] uppercase leading-none block mb-3">HOW TO FIND THE RIGHT TURF</span>
-          <h3 className="text-4xl tracking-[0.7px] leading-none">Choose the 3 most important to you</h3>
+          <span className="text-xl 2xl:text-[22px] font-medium tracking-[1.4px] uppercase leading-none block mb-3">HOW TO FIND THE RIGHT TURF</span>
+          <SectionTitle title="Choose the 3 most important to you" />
           <div className="flex justify-center gap-[75px] mt-[30px]">
             {chooseTurf.map((item) => {
               const isSelected = selectedTurf.includes(item.id);

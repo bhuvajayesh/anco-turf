@@ -1,7 +1,8 @@
 "use client";
 
-interface PageHeaderProps {
-  title: string; // main title
+export interface PageHeaderProps {
+  title: React.ReactNode; // <- allow string or JSX
+  className?: string;
 }
 
 export default function SectionTitle({
@@ -9,7 +10,7 @@ export default function SectionTitle({
 }: PageHeaderProps) {
   return (
     <>
-      <h3 className="text-4xl leading-none tracking-[0.7px]">
+      <h3 className="text-3xl 2xl:text-4xl leading-none tracking-[0.7px]">
         {title}
       </h3>
     </>

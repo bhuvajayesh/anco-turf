@@ -50,7 +50,9 @@ export default function LawnStep() {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  className="w-full transition-transform duration-300 group-hover:scale-105"
+                  width={395}
+                  height={495}
+                  className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
                 <h3 className="absolute top-7 2xl:top-[43px] w-full text-center px-2 text-white text-3xl 2xl:text-[35px] font-bold leading-none uppercase">
                   {item.title.split(" ")[0]}{" "}

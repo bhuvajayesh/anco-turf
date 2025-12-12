@@ -78,7 +78,9 @@ export default function TurfVarieties() {
             <Image
               src={ourLawnPic}
               alt="Our Lawn"
-              className="w-full transition-transform duration-300 hover:scale-102"
+              width={810}
+              height={923}
+              className="w-full h-auto transition-transform duration-300 hover:scale-102"
             />
           </div>
           <div className="flex-1">
@@ -95,7 +97,7 @@ export default function TurfVarieties() {
                       onClick={() => toggleVariety(variety.id)}
                       className="w-full px-5 2xl:px-[30px] py-3.5 2xl:py-[17.5px] flex items-center justify-between"
                     >
-                      <div className="flex items-center gap-[30px]">
+                      <div className="flex items-center gap-5 2xl:gap-[30px]">
                         <Image
                           src={variety.logo}
                           alt=""
@@ -108,8 +110,11 @@ export default function TurfVarieties() {
                         </h3>
                       </div>
                       <Image
-                        className={`w-6 h-6 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
-                          }`}
+                        width={24}
+                        height={24}
+                        className={`w-6 h-6 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
                         src={arrowIcon}
                         alt="Arrow"
                       />
@@ -117,20 +122,25 @@ export default function TurfVarieties() {
 
                     {/* Accordion Content */}
                     <div
-                      className={`overflow-hidden transition-all duration-300 ease-in-out px-5 2xl:px-[30px] ${isOpen
-                        ? "max-h-none opacity-100"
-                        : "max-h-0 opacity-0"
-                        }`}
+                      className={`overflow-hidden transition-all duration-300 ease-in-out px-5 2xl:px-[30px] ${
+                        isOpen ? "max-h-none opacity-100" : "max-h-0 opacity-0"
+                      }`}
                     >
                       <div className="pb-4 2xl:pb-[30px] pt-4 border-t border-[#436727]">
                         <p className="text-[15px] 2xl:text-base leading-[24px] text-[#404040] mb-4">
                           {variety.description}
                         </p>
                         <div className="flex gap-5">
-                          <Button variant="primary" className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center">
+                          <Button
+                            variant="primary"
+                            className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center"
+                          >
                             View Detail
                           </Button>
-                          <Button variant="secondary" className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center">
+                          <Button
+                            variant="secondary"
+                            className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center"
+                          >
                             Buy Now
                           </Button>
                         </div>

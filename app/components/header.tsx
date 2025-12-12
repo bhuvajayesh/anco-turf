@@ -17,7 +17,13 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="">
-            <Image src={Logo} alt="Logo" className="h-[51px]" />
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={149}
+              height={51}
+              className="w-auto h-[51px]"
+            />
           </div>
 
           {/* Navigation */}
@@ -34,15 +40,17 @@ export default function Header() {
           {/* Right side icons and CTA */}
           <div className="flex items-center gap-4 2xl:gap-5">
             <button className="w-[20px] aspect-square cursor-pointer">
-              <Image src={SearchIcon} alt="Search" />
+              <Image src={SearchIcon} alt="Search" width={20} height={20} />
             </button>
             <button className="w-[20px] aspect-square cursor-pointer">
-              <Image src={UserIcon} alt="User" />
+              <Image src={UserIcon} alt="User" width={20} height={20} />
             </button>
             <button className="w-[20px] aspect-square cursor-pointer">
-              <Image src={CartIcon} alt="Cart" />
+              <Image src={CartIcon} alt="Cart" width={20} height={20} />
             </button>
-            <Button variant="primary" className="!tracking-[0.7px]">1800 010 110</Button>
+            <Button variant="primary" className="!tracking-[0.7px]">
+              1800 010 110
+            </Button>
           </div>
         </div>
       </div>
