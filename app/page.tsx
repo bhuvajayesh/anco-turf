@@ -32,7 +32,7 @@ export default function Home() {
       />
       <PartnerSplitHero />
       <TurfSupplier />
-      <BlogSlider />
+      {/* <BlogSlider /> */}
     </>
   );
 }
