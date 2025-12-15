@@ -4,6 +4,7 @@ import Link from "next/link";
 import applicationMockup from "../../public/images/application.png";
 import googlePlaystore from "../../public/images/google-playstore.svg";
 import appStore from "../../public/images/app-store.svg";
+import playIcon from "../../public/images/play-icon.svg";
 
 export default function AppPromoSection() {
     return (
@@ -53,6 +54,20 @@ export default function AppPromoSection() {
                             priority
                             className="w-[340px] h-auto"
                         />
+                        <button
+                            className="absolute inset-0 flex items-center justify-center cursor-pointer"
+                            aria-label="Play video"
+                        >
+                            <div className="w-20 2xl:w-[100px] aspect-square flex items-center justify-center">
+                                <Image
+                                    src={playIcon}
+                                    alt=""
+                                    width={100}
+                                    height={100}
+                                    className="w-full h-full object-cover"
+                                />
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>

@@ -82,7 +82,7 @@ export default function SocialMediaGrid() {
                     <SectionTitle title="Latest on Social media" />
                 </div>
                 {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-5">
                     {posts.map((post) => (
                         <div
                             key={post.id}
@@ -103,7 +103,7 @@ export default function SocialMediaGrid() {
                                             <Image src={logoWhite} alt="Logo" width={26} height={9} />
                                         </span>
                                         <div>
-                                            <p className="text-[21px] font-bold leading-none">
+                                            <p className="text-lg 2xl:text-[21px] font-bold leading-none">
                                                 Anco Turf
                                             </p>
                                             <p className="mt-[3px] leading-none">{post.time}</p>
@@ -127,7 +127,7 @@ export default function SocialMediaGrid() {
                 </div>
 
                 {/* Buttons */}
-                <div className="flex flex-wrap justify-center gap-5 mt-10">
+                <div className="flex flex-wrap justify-center gap-4 2xl:gap-5 mt-10">
                     <div className="flex-1 text-center">
                         <Link href="#" className="inline-block">
                             <Button variant="primary" className="flex items-center gap-2.5 !py-[9px] group">
