@@ -11,6 +11,11 @@ import PromoBanner from "./components/PromoBanner";
 import PartnerSplitHero from "./components/PartnerSplitHero";
 import TurfSupplier from "./components/TurfSupplier";
 import BlogSlider from "./components/BlogSlider";
+import CustomerSplitSlider from "./components/CustomerSplitSlider";
+import AppPromoSection from "./components/AppPromoSection";
+import LocationsTabs from "./components/LocationsTabs";
+import SocialMediaGrid from "./components/SocialMediaGrid";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   return (
@@ -32,7 +37,12 @@ export default function Home() {
       />
       <PartnerSplitHero />
       <TurfSupplier />
-      {/* <BlogSlider /> */}
+      <BlogSlider />
+      <CustomerSplitSlider />
+      <AppPromoSection />
+      <LocationsTabs />
+      <SocialMediaGrid />
+      <FaqSection />
     </>
   );
 }
