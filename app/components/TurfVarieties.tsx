@@ -63,7 +63,7 @@ export default function TurfVarieties() {
   };
 
   return (
-    <div className="py-20">
+    <div className="pt-20 pb-[60px] md:py-20">
       <div className="container mx-auto">
         <div className="text-center">
           <SectionTitle title="Our Lawn Turf Varieties" />
@@ -73,7 +73,7 @@ export default function TurfVarieties() {
             text.
           </p>
         </div>
-        <div className="flex gap-5 mt-10">
+        <div className="flex flex-col md:flex-row gap-5 mt-10">
           <div className="flex-1 overflow-hidden rounded-[20px]">
             <Image
               src={ourLawnPic}
@@ -95,17 +95,17 @@ export default function TurfVarieties() {
                     {/* Accordion Header */}
                     <button
                       onClick={() => toggleVariety(variety.id)}
-                      className="w-full px-5 2xl:px-[30px] py-3.5 2xl:py-[17.5px] flex items-center justify-between"
+                      className="w-full px-5 2xl:px-[30px] py-5 md:py-3.5 2xl:py-[17.5px] flex items-center justify-between"
                     >
-                      <div className="flex items-center gap-5 2xl:gap-[30px]">
+                      <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-3 lg:gap-5 2xl:gap-[30px]">
                         <Image
                           src={variety.logo}
                           alt=""
                           width={200}
                           height={80}
-                          className="h-14 2xl:h-20 w-auto"
+                          className="h-14 md:h-10 lg:h-14 2xl:h-20 w-auto"
                         />
-                        <h3 className="text-2xl 2xl:text-[28px] 2xl:leading-[30px]">
+                        <h3 className="text-lg lg:text-xl xl:text-2xl 2xl:text-[28px] 2xl:leading-[30px] text-left">
                           {variety.name}
                         </h3>
                       </div>
@@ -127,19 +127,19 @@ export default function TurfVarieties() {
                       }`}
                     >
                       <div className="pb-4 2xl:pb-[30px] pt-4 border-t border-[#436727]">
-                        <p className="text-[15px] 2xl:text-base leading-[24px] text-[#404040] mb-4">
+                        <p className="md:text-[15px] 2xl:text-base leading-[24px] text-[#404040] mb-4">
                           {variety.description}
                         </p>
-                        <div className="flex gap-5">
+                        <div className="flex gap-3 md:gap-5">
                           <Button
                             variant="primary"
-                            className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center"
+                            className="!tracking-[0.7px] md:min-w-[156px] text-center flex-1 md:flex-none"
                           >
                             View Detail
                           </Button>
                           <Button
                             variant="secondary"
-                            className="2xl:!py-[22px] 2xl:!px-[29px] !tracking-[0.7px] min-w-[156px] text-center"
+                            className="!tracking-[0.7px] md:min-w-[156px] text-center flex-1 md:flex-none"
                           >
                             Buy Now
                           </Button>

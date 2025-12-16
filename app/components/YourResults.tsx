@@ -156,7 +156,7 @@ const turfProducts = [
 
 export default function YourResults() {
   return (
-    <div className="bg-[#F6F6F6] pt-[60px] pb-10">
+    <div className="bg-[#F6F6F6] pt-10 pb-20 md:pt-[60px] md:pb-10">
       <div className="container mx-auto">
         <div className="relative z-1">
           <div className="bg-[#202020] text-white p-[17px] text-center rounded-full tracking-[1.4px] uppercase font-medium leading-none">
@@ -165,11 +165,11 @@ export default function YourResults() {
           <div className="-z-1 absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-[30px] h-[30px] bg-[url(/images/down-arrow.svg)] bg-cover"></div>
         </div>
         {/* Product Cards */}
-        <div className="grid grid-cols-3 gap-[30px] pt-[50px] pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-[30px] mt-[35px] md:pt-[50px] pb-10">
           {turfProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-[20px] p-6 2xl:p-10 2xl:pb-[34px] overflow-hidden"
+              className="bg-white rounded-[20px] p-5 pt-10 md:p-4 xl:p-6 2xl:p-10 2xl:pb-[34px] overflow-hidden"
             >
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1">
@@ -178,13 +178,10 @@ export default function YourResults() {
                     alt=""
                     width={246}
                     height={100}
-                    className="w-auto h-20 2xl:h-[100px]"
+                    className="w-auto h-[73px] md:h-12 lg:h-20 2xl:h-[100px]"
                   />
-                  <h3 className="text-xl 2xl:text-[27px] leading-none my-4 2xl:my-5 inline-block">
-                    {product.name}
-                  </h3>
                 </div>
-                <div className="flex-none w-24 2xl:w-[122px] aspect-square rounded-full overflow-hidden shadow-[0_2px_2px_0px_rgba(0,0,0,0.25)]">
+                <div className="flex-none w-[90px] md:w-12 lg:w-20 xl:w-24 2xl:w-[122px] aspect-square rounded-full overflow-hidden shadow-[0_2px_2px_0px_rgba(0,0,0,0.25)]">
                   <Image
                     src={product.image}
                     alt={product.name}
@@ -194,12 +191,15 @@ export default function YourResults() {
                   />
                 </div>
               </div>
-              <p className="text-sm 2xl:text-base leading-6 capitalize whitespace-pre-line">{product.subtitle}</p>
+              <h3 className="text-[27px] md:text-base lg:text-lg xl:text-xl 2xl:text-[27px] leading-none my-5 inline-block">
+                {product.name}
+              </h3>
+              <p className="md:text-sm 2xl:text-base leading-6 capitalize xl:whitespace-pre-line">{product.subtitle}</p>
 
-              <div className="grid grid-cols-2 gap-x-5 2xl:gap-x-[46px] gap-y-2.5 mt-6 2xl:mt-[30px]">
+              <div className="grid gap-x-5 xl:gap-x-[46px] gap-y-2.5 mt-[30px] md:mt-6 2xl:mt-[30px]">
                 {product.features.map((feature, index) => {
                   return (
-                    <div key={index} className="flex items-center gap-2 2xl:gap-6 border-b border-[#EDF4EE] 2xl:px-2.5 pb-2.5 nth-last-[1]:border-0 nth-last-[2]:border-0">
+                    <div key={index} className="flex items-center gap-2 2xl:gap-6 border-b border-[#EDF4EE] 2xl:px-2.5 pb-2.5 nth-last-[1]:border-0 lg:nth-last-[2]:border-0">
                       <div className="w-[28px] text-center flex-none">
                         <Image
                           src={feature.icon}
@@ -209,7 +209,7 @@ export default function YourResults() {
                           className="mx-auto"
                         />
                       </div>
-                      <div className="text-sm 2xl:text-base flex-1 text-[#404040] leading-normal">
+                      <div className="md:text-sm 2xl:text-base flex-1 text-[#404040] leading-normal">
                         <p className="">
                           {feature.label}
                         </p>
@@ -222,11 +222,11 @@ export default function YourResults() {
                 })}
               </div>
 
-              <div className="flex gap-3 2xl:gap-5 mt-5">
-                <Button variant="primary" className="flex-1 xl:!px-2 2xl:!py-[22px]">
+              <div className="flex flex-col lg:flex-row gap-2.5 md:gap-3 2xl:gap-5 mt-5">
+                <Button variant="primary" className="flex-1 !px-2">
                   Turf Calculator
                 </Button>
-                <Button variant="secondary" className="flex-1 xl:!px-2 2xl:!py-[22px]">
+                <Button variant="secondary" className="flex-1 !px-2">
                   Buy Now
                 </Button>
               </div>
@@ -234,7 +234,7 @@ export default function YourResults() {
           ))}
         </div>
         <div className="text-center">
-          <Button variant="primary" className="2xl:!px-4 2xl:!py-[22px] 2xl:min-w-60">Turf Selection Tool</Button>
+          <Button variant="primary" className="2xl:!px-4 2xl:min-w-60">Turf Selection Tool</Button>
         </div>
       </div>
     </div>

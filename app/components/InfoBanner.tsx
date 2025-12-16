@@ -21,11 +21,11 @@ export default function InfoBanner({
                     backgroundPosition: "center",
                 }}
             >
-                <div className="flex items-center justify-between gap-10 text-white">
-                    <h3 className="text-4xl 2xl:text-[38px] xl:leading-none max-w-md">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-10 text-white">
+                    <h3 className="flex-1 lg:flex-none text-4xl md:text-2xl xl:text-3xl 2xl:text-[38px] xl:leading-none lg:max-w-md">
                         {title}
                     </h3>
-                    <p className="text-sm xl:text-base leading-6 max-w-lg">
+                    <p className="flex-1 lg:flex-none text-sm xl:text-base lg:leading-6 lg:max-w-lg">
                         {description}
                     </p>
                 </div>

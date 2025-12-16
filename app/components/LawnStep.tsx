@@ -40,7 +40,7 @@ export default function LawnStep() {
         <div className="text-center mb-10">
           <SectionTitle title="Get the perfect lawn in 4 easy steps" />
         </div>
-        <div className="grid grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {turfSteps.map((item, index) => (
             <div
               key={index}
@@ -54,7 +54,7 @@ export default function LawnStep() {
                   height={495}
                   className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
-                <h3 className="absolute top-7 2xl:top-[43px] w-full text-center px-2 text-white text-3xl 2xl:text-[35px] font-bold leading-none uppercase">
+                <h3 className="absolute top-10 md:top-7 2xl:top-[43px] w-full text-center px-2 text-white text-[35px] md:text-2xl xl:text-3xl 2xl:text-[35px] font-bold leading-none uppercase">
                   {item.title.split(" ")[0]}{" "}
                   <span className="font-normal">
                     {item.title.split(" ").slice(1).join(" ")}

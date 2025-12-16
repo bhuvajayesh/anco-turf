@@ -82,18 +82,18 @@ export default function SocialMediaGrid() {
                     <SectionTitle title="Latest on Social media" />
                 </div>
                 {/* Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 2xl:gap-5">
                     {posts.map((post) => (
                         <div
                             key={post.id}
-                            className="relative overflow-hidden rounded-[20px] aspect-square"
+                            className="relative overflow-hidden rounded-[20px] aspect-square group"
                         >
                             <Image
                                 src={post.image}
                                 alt=""
                                 width={395}
                                 height={395}
-                                className="object-cover w-full h-full"
+                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute left-0 bottom-0 w-full h-full rounded-[20px] bg-[linear-gradient(180deg,rgba(0,0,0,0)_0%,#000000_100%)]"></div>
                             <div className="absolute inset-x-0 bottom-0 p-5">

@@ -30,7 +30,7 @@ export default function PartnerSplitHero() {
                 <div className="text-center pb-10">
                     <SectionTitle title="Partner with Anco Turf" />
                 </div>
-                <div className="flex items-start gap-2.5">
+                <div className="flex flex-col md:flex-row items-start gap-5 md:gap-2.5">
                     {partnerItems.map((item) => (
                         <div
                             key={item.id}
@@ -43,12 +43,12 @@ export default function PartnerSplitHero() {
                                 alt={item.title}
                                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                             />
-                            <div className="absolute bottom-20 left-20 text-white flex flex-col items-start gap-[30px]">
+                            <div className="absolute bottom-[30px] md:bottom-6 lg:bottom-12 xl:bottom-20 left-[30px] md:left-6 lg:left-12 xl:left-20 text-white flex flex-col items-start gap-5 lg:gap-[30px]">
                                 <SectionTitle title={item.title} />
                                 <Link href={item.buttonLink}>
                                     <Button
                                         variant="primary"
-                                        className="!border-white text-white hover:bg-white hover:!text-[#5D9732] 2xl:!py-[22px] min-w-40"
+                                        className="!border-white text-white hover:bg-white hover:!text-[#5D9732] min-w-40"
                                     >
                                         {item.buttonText}
                                     </Button>

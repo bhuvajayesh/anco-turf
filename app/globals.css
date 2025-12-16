@@ -48,3 +48,12 @@ img {
     padding: 0 16px;
   }
 }
+
+@media only screen and (max-width: 767px) {
+  .container {
+    padding: 0 12px;
+  }
+  .content-area {
+    padding-top: 136px;
+  }
+}

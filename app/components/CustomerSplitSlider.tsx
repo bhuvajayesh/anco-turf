@@ -50,16 +50,23 @@ const REVIEWS: Review[] = [
 export default function CustomerSplitSlider() {
     // responsive visible count: 1 on small screens, 3 on md+
     const [visibleCount, setVisibleCount] = useState<number>(3);
+
     useEffect(() => {
-        const mq = (q: string) => window.matchMedia(q);
-        const setCount = () => {
-            const isMd = mq("(min-width: 768px)").matches;
-            setVisibleCount(isMd ? 3 : 1);
+        const updateCount = () => {
+            const width = window.innerWidth;
+
+            if (width >= 1024) {
+                setVisibleCount(3); // desktop
+            } else if (width >= 768) {
+                setVisibleCount(2); // small screens / tablet
+            } else {
+                setVisibleCount(1); // mobile
+            }
         };
-        setCount();
-        const mdMq = mq("(min-width: 768px)");
-        mdMq.addEventListener("change", setCount);
-        return () => mdMq.removeEventListener("change", setCount);
+
+        updateCount();
+        window.addEventListener("resize", updateCount);
+        return () => window.removeEventListener("resize", updateCount);
     }, []);
 
     const items = useMemo(() => REVIEWS, []);
@@ -90,9 +97,9 @@ export default function CustomerSplitSlider() {
                 <div className="text-center mb-10">
                     <SectionTitle title="Our Customers" />
                 </div>
-                <div className="flex items-stretch">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 items-stretch">
                     {/* Left fixed summary card */}
-                    <div className="w-[24.65%] rounded-[20px] bg-[#5D9732] text-white p-6 2xl:px-10 2xl:py-8 flex flex-col justify-between gap-3 2xl:gap-5">
+                    <div className="min-w-[200px] lg:w-[24.65%] rounded-[20px] bg-[#5D9732] text-white p-4 xl:p-6 2xl:px-10 2xl:py-8 flex flex-col justify-between gap-3 2xl:gap-5">
                         {/* Facebook block */}
                         <div className="flex flex-col items-center gap-2.5">
                             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
@@ -137,7 +144,7 @@ export default function CustomerSplitSlider() {
                         <button
                             onClick={prev}
                             aria-label="Previous reviews"
-                            className="absolute -left-7 2xl:-left-[35px] top-1/2 -translate-y-1/2 w-14 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+                            className="absolute -left-2 lg:-left-4 2xl:-left-[35px] top-1/2 -translate-y-1/2 w-14 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
                         >
                             <Image
                                 src={sliderArrowPrev}
@@ -161,10 +168,10 @@ export default function CustomerSplitSlider() {
                                         key={it.id}
                                         className="flex-shrink-0 px-2.5"
                                         style={{
-                                            width: `${100 / 3}%`,
+                                            width: `${100 / visibleCount}%`,
                                         }}
                                     >
-                                        <article className="relative rounded-[20px] bg-[#F6F6F6] h-full p-6 2xl:px-11 2xl:py-[30px] flex flex-col items-center text-center">
+                                        <article className="relative rounded-[20px] bg-[#F6F6F6] h-full p-4 xl:p-6 2xl:px-11 2xl:py-[30px] flex flex-col items-center text-center">
                                             <div className="w-[72px] aspect-square rounded-full bg-white flex items-center justify-center">
                                                 <Image
                                                     src={it.providerIcon ?? ""}
@@ -189,7 +196,7 @@ export default function CustomerSplitSlider() {
                         <button
                             onClick={next}
                             aria-label="Next reviews"
-                            className="absolute -right-7 2xl:-right-[35px] top-1/2 -translate-y-1/2 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+                            className="absolute -right-2 lg:-right-4 2xl:-right-[35px] top-1/2 -translate-y-1/2 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
                         >
                             <Image
                                 src={sliderArrowNext}

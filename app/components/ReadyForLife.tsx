@@ -84,6 +84,26 @@ export default function ReadyForLife() {
     handlePlayPause();
   };
 
+  const [visibleCount, setVisibleCount] = useState(3);
+  useEffect(() => {
+    const updateVisibleCount = () => {
+      const width = window.innerWidth;
+
+      if (width >= 1024) {
+        setVisibleCount(2.75); // desktop
+      } else if (width >= 768) {
+        setVisibleCount(2.5); // tablet
+      } else {
+        setVisibleCount(1); // mobile
+      }
+    };
+
+    updateVisibleCount();
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
+  }, []);
+
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsTransitioning(false);
@@ -112,11 +132,11 @@ export default function ReadyForLife() {
   return (
     <>
       <section className="bg-[#F6F6F6]">
-        <div className="text-center px-4 pt-[41px] pb-[34px]">
+        <div className="text-center py-10 px-2 md:px-4 md:pt-[41px] md:pb-[34px]">
           <SectionTitle title="Engineered for Perfection. Ready for Life." />
         </div>
         {/* Main Media Display Section */}
-        <div className="relative xl:h-[700] 2xl:h-[940px] overflow-hidden">
+        <div className="relative h-60 md:h-[600px] xl:h-[700] 2xl:h-[940px] overflow-hidden">
           {selectedMedia.type === "image" ? (
             <>
               {/* Background Image */}
@@ -157,7 +177,7 @@ export default function ReadyForLife() {
                   className="absolute inset-0 flex items-center justify-center cursor-pointer"
                   aria-label="Play video"
                 >
-                  <div className="w-20 2xl:w-[100px] aspect-square flex items-center justify-center">
+                  <div className="w-[100px] md:w-20 2xl:w-[100px] aspect-square flex items-center justify-center">
                     <Image
                       src={playIcon}
                       alt=""
@@ -172,13 +192,13 @@ export default function ReadyForLife() {
           )}
         </div>
         {/* Carousel Section */}
-        <div className="pt-5 pb-[140px] pl-[140px] overflow-hidden">
+        <div className="pt-5 pb-10 px-[46px] md:pt-5 md:pb-[140px] md:pl-28 xl:pl-[140px] overflow-hidden">
           <div className="relative">
             {/* Previous Button */}
             <button
               onClick={handlePrevious}
               disabled={isTransitioning}
-              className="absolute -left-7 2xl:left-[-35px] top-1/2 -translate-y-1/2 w-14 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+              className="absolute -left-9 md:-left-7 2xl:left-[-35px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
               aria-label="Previous items"
             >
               <Image src={sliderArrowPrev} alt="Prev" width={70} height={70} className="w-full h-full" />
@@ -206,7 +226,7 @@ export default function ReadyForLife() {
                       key={`${item.id}-${currentIndex}-${index}`}
                       className="flex-shrink-0 relative"
                       style={{
-                        width: `${100 / 2.75}%`,
+                        width: `${100 / visibleCount}%`,
                       }}
                     >
                       <button
@@ -220,13 +240,13 @@ export default function ReadyForLife() {
                       >
                         {/* Media Thumbnail */}
                         <div
-                          className={`relative overflow-hidden rounded-[20px] aspect-[16/9] transition-all ${isSelected
+                          className={`relative overflow-hidden rounded-[20px] w-full h-[174px] md:h-auto aspect-[16/9] transition-all ${isSelected
                             ? ""
                             : ""
                             }`}
-                            // ? "ring-4 ring-[#5d9732] shadow-lg"
-                            // : "shadow-sm hover:shadow-md"
-                            // }`}
+                        // ? "ring-4 ring-[#5d9732] shadow-lg"
+                        // : "shadow-sm hover:shadow-md"
+                        // }`}
                         >
                           <img
                             src={displayImage}
@@ -237,7 +257,7 @@ export default function ReadyForLife() {
                           {/* Video Play Icon Overlay */}
                           {item.type === "video" && (
                             <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="h-14 2xl:w-[70px] 2xl:h-[70px] rounded-full">
+                              <div className="h-[70px] md:h-14 2xl:h-[70px] aspect-square rounded-full">
                                 <Image src={playIcon} alt="" width={70} height={70} className="w-full h-full" />
                               </div>
                             </div>
@@ -245,7 +265,7 @@ export default function ReadyForLife() {
                         </div>
 
                         {/* Media Title */}
-                        <h3 className="text-lg 2xl:text-[21px] mt-5 2xl:mt-[30px] 2xl:leading-8 absolute w-full text-center">
+                        <h3 className="text-[21px] lg:text-lg 2xl:text-[21px] mt-5 2xl:mt-[30px] leading-8 md:absolute w-full text-center">
                           {item.title}
                         </h3>
                       </button>
@@ -259,7 +279,7 @@ export default function ReadyForLife() {
             <button
               onClick={handleNext}
               disabled={isTransitioning}
-              className="absolute right-20 2xl:right-[105px] top-1/2 -translate-y-1/2 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+              className="absolute -right-9 md:right-20 2xl:right-[105px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
               aria-label="Next items"
             >
               <Image src={sliderArrowNext} alt="Next" width={70} height={70} className="w-full h-full" />

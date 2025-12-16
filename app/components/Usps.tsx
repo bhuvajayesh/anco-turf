@@ -38,9 +38,9 @@ export default function Usps() {
   return (
     <div className="bg-[#f6f6f6] py-[30px]">
       <div className="container mx-auto">
-        <div className="flex items-center justify-between gap-4 2xl:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 items-center justify-between gap-2 md:gap-4 2xl:gap-5">
           {features.map((item, index) => (
-            <div key={index} className="flex items-center gap-3 2xl:gap-5">
+            <div key={index} className="flex items-center gap-2.5 md:gap-3 2xl:gap-5">
               <Image
                 src={item.icon}
                 alt=""

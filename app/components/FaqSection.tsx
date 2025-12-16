@@ -134,8 +134,8 @@ export default function FaqSection() {
     return (
         <section className="py-20">
             <div className="container mx-auto">
-                <div className="flex gap-16 2xl:gap-[105px] items-start">
-                    <div className="2xl:w-[815px] flex-1 2xl:flex-none">
+                <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 2xl:gap-[105px] items-start">
+                    <div className="w-full lg:w-auto 2xl:w-[815px] flex-1 2xl:flex-none">
                         <Image
                             src={faqsImage}
                             alt=""
@@ -151,7 +151,7 @@ export default function FaqSection() {
                             <SectionTitle title="Frequently Asked Questions" />
                         </div>
                         {/* TABS */}
-                        <div className="flex justify-between gap-2 border-b-[2px] border-[#F6F6F6] mb-8">
+                        <div className="flex justify-between gap-2 border-b-[2px] border-[#F6F6F6] mb-4 xl:mb-8">
                             {tabs.map((tab, index) => (
                                 <button
                                     key={tab}
@@ -159,7 +159,7 @@ export default function FaqSection() {
                                         setActiveTab(index);
                                         setOpenIndex(0);
                                     }}
-                                    className={`pb-5 font-medium relative ${activeTab === index
+                                    className={`pb-5 font-medium text-sm xl:text-base relative ${activeTab === index
                                         ? "text-[#528917]"
                                         : "text-[#404040]"
                                         }`}
@@ -210,7 +210,7 @@ export default function FaqSection() {
                                                 </button>
 
                                                 {isOpen && (
-                                                    <p className="mt-2.5 leading-6">
+                                                    <p className="mt-2.5 leading-normal xl:leading-6 text-sm xl:text-base">
                                                         {faq.answer}
                                                     </p>
                                                 )}

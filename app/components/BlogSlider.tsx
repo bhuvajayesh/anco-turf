@@ -132,8 +132,8 @@ export default function BlogSlider() {
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         />
                                         <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[40%] bg-gradient-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out"></div>
-                                        <div className="absolute bottom-20 w-full text-center px-4">
-                                            <h3 className="text-white text-xl 2xl:text-[27px] leading-9 font-light">
+                                        <div className="absolute bottom-8 lg:bottom-12 xl:bottom-20 w-full text-center px-4">
+                                            <h3 className="text-white text-xl 2xl:text-[27px] lg:leading-9 font-light">
                                                 {it.title}
                                             </h3>
                                         </div>

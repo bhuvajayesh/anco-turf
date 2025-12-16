@@ -14,7 +14,7 @@ export default function HeroSection() {
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 to-black/0"></div>
       <div className="container mx-auto h-full flex items-end relative">
-        <div className="absolute bottom-48 2xl:bottom-[291px]">
+        <div className="relative bottom-[60px] md:bottom-48 2xl:bottom-[291px] pl-2 pr-1 md:px-0">
           <p className="text-lg font-medium tracking-[1.2px] uppercase text-white">
             Premium Turf
           </p>
@@ -27,13 +27,13 @@ export default function HeroSection() {
           <div className="flex gap-2.5 mt-10">
             <Button
               variant="primary"
-              className="2xl:py-[22px] 2xl:px-[30px] border border-white text-white"
+              className="border border-white text-white"
             >
               Get started
             </Button>
             <Button
               variant="primary"
-              className="2xl:py-[22px] 2xl:px-[30px] border border-white text-white"
+              className="border border-white text-white"
             >
               Lawn Varieties
             </Button>

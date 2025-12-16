@@ -6,17 +6,17 @@ export default function TurfSupplier() {
   return (
     <section className="pb-20">
       <div className="container mx-auto">
-        <div className="flex gap-14 2xl:gap-[88px]">
-          <div className="flex-1 h-[498px] 2xl:h-[680px] flex flex-col items-start">
+        <div className="flex flex-col md:flex-row gap-14 2xl:gap-[88px]">
+          <div className="flex-1 md:h-[300px] lg:h-[400px] xl:h-[498px] 2xl:h-[680px] flex flex-col items-start">
             <SectionTitle
               title={
                 <>
-                  Anco Turf - Leading Instant Turf <br /> Supplier for Melbourne
+                  Anco Turf - Leading Instant Turf <br className="hidden lg:block" /> Supplier for Melbourne
                   & Geelong
                 </>
               }
             />
-            <div className="mt-9 flex-1 w-full overflow-auto pr-[43px]">
+            <div className="mt-4 lg:mt-6 xl:mt-9 flex-1 w-full max-h-[790px] md:max-h-auto overflow-auto lg:pr-[43px]">
               <p className="leading-6 mb-5">
                 Whether you need turf for a small front garden or a large
                 landscaping project, Anco Turf are the turf suppliers you can

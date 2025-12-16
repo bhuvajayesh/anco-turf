@@ -10,7 +10,7 @@ export default function AppPromoSection() {
     return (
         <section className="relative overflow-hidden bg-[linear-gradient(180deg,rgba(237,244,238,0)_0%,#F6F6F6_65.07%)]">
             <div className="container mx-auto">
-                <div className="flex items-center justify-center gap-[167px]">
+                <div className="flex items-center justify-center gap-10 lg:gap-28 xl:gap-[167px]">
                     <div className="text-center">
                         <div className="text-[#5D9732]">
                             <SectionTitle
@@ -52,7 +52,7 @@ export default function AppPromoSection() {
                             width={340}
                             height={551}
                             priority
-                            className="w-[340px] h-auto"
+                            className="md:w-[300px] lg:w-[340px] h-auto"
                         />
                         <button
                             className="absolute inset-0 flex items-center justify-center cursor-pointer"
