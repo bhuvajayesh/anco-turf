@@ -40,7 +40,7 @@ export default function LawnStep() {
         <div className="text-center mb-10">
           <SectionTitle title="Get the perfect lawn in 4 easy steps" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-2 md:px-0">
           {turfSteps.map((item, index) => (
             <div
               key={index}
@@ -61,7 +61,7 @@ export default function LawnStep() {
                   </span>
                 </h3>
               </div>
-              <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[80%] bg-gradient-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out">
+              <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[80%] bg-linear-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out">
                 <p className="text-center leading-6 text-white mb-5">
                   {item.subtitle}
                 </p>

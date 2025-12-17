@@ -192,20 +192,20 @@ export default function ReadyForLife() {
           )}
         </div>
         {/* Carousel Section */}
-        <div className="pt-5 pb-10 px-[46px] md:pt-5 md:pb-[140px] md:pl-28 xl:pl-[140px] overflow-hidden">
+        <div className="pt-5 pb-10 md:pt-5 md:pb-[140px] md:pl-28 xl:pl-[140px] overflow-hidden">
           <div className="relative">
             {/* Previous Button */}
             <button
               onClick={handlePrevious}
               disabled={isTransitioning}
-              className="absolute -left-9 md:-left-7 2xl:left-[-35px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+              className="absolute left-2.5 md:-left-7 2xl:left-[-35px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
               aria-label="Previous items"
             >
               <Image src={sliderArrowPrev} alt="Prev" width={70} height={70} className="w-full h-full" />
             </button>
 
             {/* Media Items Container */}
-            <div className="relative mx-auto">
+            <div className="relative mx-auto w-[calc(100%-92px)] overflow-hidden md:w-full md:overflow-visible">
               <div
                 className="flex gap-5 transition-transform duration-300 ease-in-out"
               // style={{
@@ -224,7 +224,7 @@ export default function ReadyForLife() {
                   return (
                     <div
                       key={`${item.id}-${currentIndex}-${index}`}
-                      className="flex-shrink-0 relative"
+                      className="shrink-0 relative"
                       style={{
                         width: `${100 / visibleCount}%`,
                       }}
@@ -240,7 +240,7 @@ export default function ReadyForLife() {
                       >
                         {/* Media Thumbnail */}
                         <div
-                          className={`relative overflow-hidden rounded-[20px] w-full h-[174px] md:h-auto aspect-[16/9] transition-all ${isSelected
+                          className={`relative overflow-hidden rounded-[20px] w-full h-[174px] md:h-auto aspect-video transition-all ${isSelected
                             ? ""
                             : ""
                             }`}
@@ -279,7 +279,7 @@ export default function ReadyForLife() {
             <button
               onClick={handleNext}
               disabled={isTransitioning}
-              className="absolute -right-9 md:right-20 2xl:right-[105px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+              className="absolute right-2.5 md:right-20 2xl:right-[105px] top-[52px] md:top-1/2 md:-translate-y-1/2 w-[70px] md:w-14 2xl:w-[70px] aspect-square z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
               aria-label="Next items"
             >
               <Image src={sliderArrowNext} alt="Next" width={70} height={70} className="w-full h-full" />

@@ -134,7 +134,7 @@ export default function FaqSection() {
     return (
         <section className="py-20">
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 2xl:gap-[105px] items-start">
+                <div className="flex flex-col lg:flex-row gap-10 xl:gap-16 2xl:gap-[105px] items-start px-2 md:px-0">
                     <div className="w-full lg:w-auto 2xl:w-[815px] flex-1 2xl:flex-none">
                         <Image
                             src={faqsImage}
@@ -151,7 +151,7 @@ export default function FaqSection() {
                             <SectionTitle title="Frequently Asked Questions" />
                         </div>
                         {/* TABS */}
-                        <div className="flex justify-between gap-2 border-b-[2px] border-[#F6F6F6] mb-4 xl:mb-8">
+                        <div className="flex justify-between gap-2 border-b-2 border-[#F6F6F6] mb-7 md:mb-4 xl:mb-8">
                             {tabs.map((tab, index) => (
                                 <button
                                     key={tab}
@@ -159,14 +159,14 @@ export default function FaqSection() {
                                         setActiveTab(index);
                                         setOpenIndex(0);
                                     }}
-                                    className={`pb-5 font-medium text-sm xl:text-base relative ${activeTab === index
+                                    className={`pb-2.5 md:pb-5 font-medium md:text-sm xl:text-base relative text-small-mobile ${activeTab === index
                                         ? "text-[#528917]"
                                         : "text-[#404040]"
                                         }`}
                                 >
                                     {tab}
                                     {activeTab === index && (
-                                        <span className="absolute left-0 -bottom-[1px] w-full h-[2px] bg-[#528917]" />
+                                        <span className="absolute left-0 -bottom-px w-full h-0.5 bg-[#528917]" />
                                     )}
                                 </button>
                             ))}
@@ -192,7 +192,7 @@ export default function FaqSection() {
                                                 className="border-b border-[#528917] pb-2.5 transition-all duration-300"
                                             >
                                                 <button
-                                                    className="w-full flex justify-between items-center leading-8"
+                                                    className="w-full flex justify-between items-center leading-8 font-medium"
                                                     onClick={() =>
                                                         setOpenIndex(isOpen ? null : index)
                                                     }
@@ -210,7 +210,7 @@ export default function FaqSection() {
                                                 </button>
 
                                                 {isOpen && (
-                                                    <p className="mt-2.5 leading-normal xl:leading-6 text-sm xl:text-base">
+                                                    <p className="mt-2.5 leading-normal xl:leading-6 md:text-sm xl:text-base">
                                                         {faq.answer}
                                                     </p>
                                                 )}

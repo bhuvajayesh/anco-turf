@@ -12,7 +12,7 @@ export default function HeroSection() {
       >
         <source src="/images/banner-video.mp4" type="video/mp4" />
       </video>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 to-black/0"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black/75 to-black/0"></div>
       <div className="container mx-auto h-full flex items-end relative">
         <div className="relative bottom-[60px] md:bottom-48 2xl:bottom-[291px] pl-2 pr-1 md:px-0">
           <p className="text-lg font-medium tracking-[1.2px] uppercase text-white">
@@ -21,19 +21,19 @@ export default function HeroSection() {
           <h1 className="text-4xl font-medium leading-[1.1] tracking-[0px] uppercase text-white my-2.5">
             PERFECT LAWNS
           </h1>
-          <p className="text-lg font-medium leading-[1.5] text-white">
+          <p className="text-lg font-medium leading-normal text-white">
             Designed To Thrive in Australian Conditions.
           </p>
           <div className="flex gap-2.5 mt-10">
             <Button
               variant="primary"
-              className="border border-white text-white"
+              className="border border-white text-white custom-px-small-mobile"
             >
               Get started
             </Button>
             <Button
               variant="primary"
-              className="border border-white text-white"
+              className="border border-white text-white custom-px-small-mobile"
             >
               Lawn Varieties
             </Button>

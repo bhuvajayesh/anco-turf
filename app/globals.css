@@ -53,7 +53,26 @@ img {
   .container {
     padding: 0 12px;
   }
+
   .content-area {
     padding-top: 136px;
+  }
+
+  .custom-px-mobile {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media only screen and (max-width: 401px) {
+  .text-small-mobile {
+    font-size: 14px;
+  }
+  .h-small-mobile {
+    height: 64px;
+  }
+  .custom-px-small-mobile {
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }

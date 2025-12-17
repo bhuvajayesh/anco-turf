@@ -50,12 +50,12 @@ export default function Usps() {
               />
               {Array.isArray(item.text) ? (
                 <div>
-                  <p className="text-sm font-medium leading-[20px] tracking-[1.4px] uppercase">{item.text[0]}</p>
-                  <p className="text-sm font-medium leading-[20px] tracking-[1.4px] uppercase">{item.text[1]}</p>
+                  <p className="text-sm font-medium leading-5 tracking-[1.4px] uppercase">{item.text[0]}</p>
+                  <p className="text-sm font-medium leading-5 tracking-[1.4px] uppercase">{item.text[1]}</p>
                 </div>
               ) : (
                 <p
-                  className={`text-sm font-medium leading-[20px] tracking-[1.4px] uppercase`}
+                  className={`text-sm font-medium leading-5 tracking-[1.4px] uppercase`}
                 >
                   {item.text}
                 </p>

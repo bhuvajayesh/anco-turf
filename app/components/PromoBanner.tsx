@@ -39,7 +39,7 @@ const PromoBanner = ({
           <p className="text-4xl md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-normal text-white leading-none">{subtitle}</p>
         </div>
         <Link href={buttonLink}>
-          <Button variant="secondary" className="!tracking-[1.4px] !bg-[#99C555] !text-[#202020] hover:!bg-white min-w-[207px] md:min-w-40 xl:min-w-[207px]">
+          <Button variant="secondary" className="tracking-[1.4px]! bg-[#99C555]! text-[#202020]! hover:bg-white! min-w-[207px] md:min-w-40 xl:min-w-[207px]">
             {buttonText}
           </Button>
         </Link>

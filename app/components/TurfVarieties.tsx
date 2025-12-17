@@ -127,19 +127,19 @@ export default function TurfVarieties() {
                       }`}
                     >
                       <div className="pb-4 2xl:pb-[30px] pt-4 border-t border-[#436727]">
-                        <p className="md:text-[15px] 2xl:text-base leading-[24px] text-[#404040] mb-4">
+                        <p className="md:text-[15px] 2xl:text-base leading-6 text-[#404040] mb-4">
                           {variety.description}
                         </p>
                         <div className="flex gap-3 md:gap-5">
                           <Button
                             variant="primary"
-                            className="!tracking-[0.7px] md:min-w-[156px] text-center flex-1 md:flex-none"
+                            className="tracking-[0.7px]! md:min-w-[156px] text-center flex-1 md:flex-none"
                           >
                             View Detail
                           </Button>
                           <Button
                             variant="secondary"
-                            className="!tracking-[0.7px] md:min-w-[156px] text-center flex-1 md:flex-none"
+                            className="tracking-[0.7px]! md:min-w-[156px] text-center flex-1 md:flex-none"
                           >
                             Buy Now
                           </Button>

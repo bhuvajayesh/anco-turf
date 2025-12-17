@@ -40,17 +40,21 @@ export default function BlogSlider() {
     // responsive visible count: 1 on small screens, 2 on medium+
     const [visibleCount, setVisibleCount] = useState<number>(2);
     useEffect(() => {
-        const mq = (q: string) => window.matchMedia(q);
-        const setCount = () => {
-            // breakpoint at 768px (md)
-            const isMd = mq("(min-width: 768px)").matches;
-            setVisibleCount(isMd ? 2 : 1);
+        const updateVisibleCount = () => {
+            const width = window.innerWidth;
+
+            if (width >= 768) {
+                setVisibleCount(2); // desktop + tablet
+            } else {
+                setVisibleCount(1); // mobile
+            }
         };
-        setCount();
-        const mdMq = mq("(min-width: 768px)");
-        mdMq.addEventListener("change", setCount);
-        return () => mdMq.removeEventListener("change", setCount);
+
+        updateVisibleCount();
+        window.addEventListener("resize", updateVisibleCount);
+        return () => window.removeEventListener("resize", updateVisibleCount);
     }, []);
+
 
     const items = useMemo(() => ITEMS, []);
     const itemCount = items.length;
@@ -101,7 +105,7 @@ export default function BlogSlider() {
                     <button
                         onClick={prev}
                         aria-label="Previous"
-                        className="absolute -left-4 2xl:-left-5 top-1/2 -translate-y-1/2 w-14 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+                        className="absolute -left-3 lg:-left-4 2xl:-left-5 top-1/2 -translate-y-1/2 w-14 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
                     >
                         <Image src={sliderArrowPrev} alt="Prev" width={70} height={70} className="w-full h-full" />
                     </button>
@@ -118,9 +122,9 @@ export default function BlogSlider() {
                             {items.map((it) => (
                                 <div
                                     key={it.id}
-                                    className="flex-shrink-0 px-2.5 aspect-square"
+                                    className="shrink-0 px-[9px] md:px-2.5 aspect-square"
                                     style={{
-                                        width: `${100 / 2}%`,
+                                        width: `${100 / visibleCount}%`,
                                     }}
                                 >
                                     <article className="relative rounded-[20px] overflow-hidden w-full h-full group">
@@ -131,9 +135,9 @@ export default function BlogSlider() {
                                             height={820}
                                             className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                                         />
-                                        <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[40%] bg-gradient-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out"></div>
+                                        <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[40%] bg-linear-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out"></div>
                                         <div className="absolute bottom-8 lg:bottom-12 xl:bottom-20 w-full text-center px-4">
-                                            <h3 className="text-white text-xl 2xl:text-[27px] lg:leading-9 font-light">
+                                            <h3 className="text-white text-[27px] md:text-xl 2xl:text-[27px] leading-9 md:leading-normal lg:leading-9 font-light">
                                                 {it.title}
                                             </h3>
                                         </div>
@@ -150,7 +154,7 @@ export default function BlogSlider() {
                     <button
                         onClick={next}
                         aria-label="Next"
-                        className="absolute -right-4 2xl:-right-5 top-1/2 -translate-y-1/2 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
+                        className="absolute -right-3 lg:-right-4 2xl:-right-5 top-1/2 -translate-y-1/2 h-14 2xl:w-[70px] 2xl:h-[70px] z-1 rounded-full shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]"
                     >
                         <Image src={sliderArrowNext} alt="Next" width={70} height={70} className="w-full h-full" />
                     </button>

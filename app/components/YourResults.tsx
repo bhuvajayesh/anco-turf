@@ -162,7 +162,7 @@ export default function YourResults() {
           <div className="bg-[#202020] text-white p-[17px] text-center rounded-full tracking-[1.4px] uppercase font-medium leading-none">
             Your Results
           </div>
-          <div className="-z-1 absolute left-1/2 -translate-x-1/2 -bottom-[10px] w-[30px] h-[30px] bg-[url(/images/down-arrow.svg)] bg-cover"></div>
+          <div className="-z-1 absolute left-1/2 -translate-x-1/2 -bottom-2.5 w-[30px] h-[30px] bg-[url(/images/down-arrow.svg)] bg-cover"></div>
         </div>
         {/* Product Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-[30px] mt-[35px] md:pt-[50px] pb-10">
@@ -200,7 +200,7 @@ export default function YourResults() {
                 {product.features.map((feature, index) => {
                   return (
                     <div key={index} className="flex items-center gap-2 2xl:gap-6 border-b border-[#EDF4EE] 2xl:px-2.5 pb-2.5 nth-last-[1]:border-0 lg:nth-last-[2]:border-0">
-                      <div className="w-[28px] text-center flex-none">
+                      <div className="w-7 text-center flex-none">
                         <Image
                           src={feature.icon}
                           alt="icon"
@@ -223,10 +223,10 @@ export default function YourResults() {
               </div>
 
               <div className="flex flex-col lg:flex-row gap-2.5 md:gap-3 2xl:gap-5 mt-5">
-                <Button variant="primary" className="flex-1 !px-2">
+                <Button variant="primary" className="flex-1 px-2!">
                   Turf Calculator
                 </Button>
-                <Button variant="secondary" className="flex-1 !px-2">
+                <Button variant="secondary" className="flex-1 px-2!">
                   Buy Now
                 </Button>
               </div>
@@ -234,7 +234,7 @@ export default function YourResults() {
           ))}
         </div>
         <div className="text-center">
-          <Button variant="primary" className="2xl:!px-4 2xl:min-w-60">Turf Selection Tool</Button>
+          <Button variant="primary" className="2xl:px-4! 2xl:min-w-60">Turf Selection Tool</Button>
         </div>
       </div>
     </div>

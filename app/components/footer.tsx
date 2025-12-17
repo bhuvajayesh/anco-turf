@@ -210,28 +210,28 @@ export default function Footer() {
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row items-start gap-20 2xl:gap-[124px]">
             <div className="flex-none w-full xl:w-[480px] 2xl:w-[548px]">
-              <Link href="/">
+              <Link href="/" className="inline-block">
                 <Image
                   src={Logo}
                   alt="Logo"
                   width={242}
                   height={83}
-                  className="w-auto h-16 2xl:h-[83px]"
+                  className="w-auto h-[83px] md:h-16 2xl:h-[83px] h-small-mobile"
                 />
               </Link>
-              <div className="mt-8 2xl:mt-[66px] mb-5">
+              <div className="mt-10 2xl:mt-[66px] mb-5">
                 <SectionTitle title="Sign Up To Our Newsletter" />
                 <p className="mt-[15px] leading-6 text-[##404040]">
                   Get the latest news and offers delivered to your inbox
                 </p>
               </div>
-              <div className="flex gap-2.5 mt-5 mb-6 2xl:mb-9">
+              <div className="flex gap-2.5 mt-5 mb-10 md:mb-6 2xl:mb-9">
                 <input
                   type="text"
                   placeholder="Email"
-                  className="border border-[#81837F] rounded-[8px] bg-white xl:flex-none w-[340px] px-[30px] text-sm text-[#404040] tracking-[0.7px] outline-none placeholder:text-[#404040]"
+                  className="border border-[#81837F] rounded-lg bg-white xl:flex-none w-[340px] px-[30px] text-sm text-[#404040] tracking-[0.7px] outline-none placeholder:text-[#404040]"
                 />
-                <Button variant="secondary" className="2xl:leading-5 2xl:py-5">
+                <Button variant="secondary" className="2xl:leading-5 2xl:py-5 flex-none">
                   Sign Up
                 </Button>
               </div>
@@ -240,7 +240,7 @@ export default function Footer() {
                   Locations
                 </h3>
                 <ul className="space-y-2.5 2xl:space-y-[15px] mt-[15px]">
-                  <li className="flex items-center gap-3">
+                  <li className="flex items-start md:items-center gap-3">
                     <Image
                       src={LocationIcon}
                       alt="Location"
@@ -252,7 +252,7 @@ export default function Footer() {
                       5175 S Gippsland Hwy, Lang Lang VIC 3984, Australia
                     </span>
                   </li>
-                  <li className="flex items-center gap-3">
+                  <li className="flex items-start md:items-center gap-3">
                     <Image
                       src={LocationIcon}
                       alt="Location"
@@ -264,7 +264,7 @@ export default function Footer() {
                       1350 Surf Coast Hwy, Torquay VIC 3228, Australia
                     </span>
                   </li>
-                  <li className="flex items-center gap-3">
+                  <li className="flex items-start md:items-center gap-3">
                     <Image
                       src={LocationIcon}
                       alt="Location"
@@ -299,7 +299,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex-1">
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-4 justify-between gap-4 2xl:gap-x-10">
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 xl:grid-cols-4 justify-between gap-y-20 gap-x-6 md:gap-4 2xl:gap-x-10">
                 {footerLinks.map((section) => (
                   <div key={section.title} className={section.order}>
                     <h4 className="mb-5 text-sm 2xl:text-base font-semibold tracking-[1.4px] uppercase">
@@ -310,7 +310,7 @@ export default function Footer() {
                         <li key={link}>
                           <a
                             href="#"
-                            className="text-[#404040] hover:text-[#528917] transition leading-6 2xl:leading-8 md:text-sm 2xl:text-base"
+                            className="text-[#404040] hover:text-[#528917] transition leading-8 md:leading-6 2xl:leading-8 md:text-sm 2xl:text-base"
                           >
                             {link}
                           </a>
@@ -326,8 +326,8 @@ export default function Footer() {
       </div>
       <div className="bg-[#5D9732]">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-[30px] text-white">
-            <p className="leading-none flex-1">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-6 py-[30px] text-white text-center md:text-left">
+            <p className="leading-6 md:leading-none flex-1">
               © 2025 Anco Seed and Turf Pty Ltd. Built & Managed by{" "}
               <Link href="" className="underline">
                 Sharp Instincts

@@ -23,7 +23,7 @@ export default function ChooseRightTurf() {
     <div className="bg-[url(/images/choose-bg.jpg)] bg-contain md:bg-cover">
       <div className="container mx-auto">
         <div className="text-center py-20 md:py-[60px] text-white">
-          <span className="text-[22px] font-medium tracking-[1.4px] uppercase leading-none block mb-5 md:mb-3">
+          <span className="text-[22px] font-medium tracking-[1.4px] uppercase leading-none block mb-3">
             HOW TO FIND THE RIGHT TURF
           </span>
           <SectionTitle title="Choose the 3 most important to you" />
@@ -44,8 +44,8 @@ export default function ChooseRightTurf() {
                   {/* Checkbox Icon */}
                   <div
                     className={`w-6 h-6 rounded-[3px] transition-all duration-200 ${isSelected
-                        ? "border-1 border-transparent"
-                        : "border-1 border-white"
+                        ? "border border-transparent"
+                        : "border border-white"
                       }`}
                   >
                     {isSelected && (

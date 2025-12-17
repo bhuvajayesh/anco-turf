@@ -97,9 +97,9 @@ export default function CustomerSplitSlider() {
                 <div className="text-center mb-10">
                     <SectionTitle title="Our Customers" />
                 </div>
-                <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 items-stretch">
+                <div className="flex flex-col lg:flex-row gap-6 lg:gap-0 items-stretch px-2 md:px-0">
                     {/* Left fixed summary card */}
-                    <div className="min-w-[200px] lg:w-[24.65%] rounded-[20px] bg-[#5D9732] text-white p-4 xl:p-6 2xl:px-10 2xl:py-8 flex flex-col justify-between gap-3 2xl:gap-5">
+                    <div className="md:min-w-[200px] lg:min-w-auto lg:w-[24.65%] rounded-[20px] bg-[#5D9732] text-white p-4 xl:p-6 2xl:px-10 2xl:py-8 flex flex-col justify-between gap-3 2xl:gap-5">
                         {/* Facebook block */}
                         <div className="flex flex-col items-center gap-2.5">
                             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
@@ -140,7 +140,7 @@ export default function CustomerSplitSlider() {
                         </div>
                     </div>
 
-                    <div className="flex-1 relative pl-2.5">
+                    <div className="flex-1 relative md:pl-2.5">
                         <button
                             onClick={prev}
                             aria-label="Previous reviews"
@@ -166,12 +166,12 @@ export default function CustomerSplitSlider() {
                                 {items.map((it) => (
                                     <div
                                         key={it.id}
-                                        className="flex-shrink-0 px-2.5"
+                                        className="shrink-0 md:px-2.5"
                                         style={{
                                             width: `${100 / visibleCount}%`,
                                         }}
                                     >
-                                        <article className="relative rounded-[20px] bg-[#F6F6F6] h-full p-4 xl:p-6 2xl:px-11 2xl:py-[30px] flex flex-col items-center text-center">
+                                        <article className="relative rounded-[20px] bg-[#F6F6F6] h-full py-[30px] px-[66px] md:p-4 xl:p-6 2xl:px-11 2xl:py-[30px] flex flex-col items-center text-center">
                                             <div className="w-[72px] aspect-square rounded-full bg-white flex items-center justify-center">
                                                 <Image
                                                     src={it.providerIcon ?? ""}
@@ -181,8 +181,8 @@ export default function CustomerSplitSlider() {
                                                     className="w-auto h-10"
                                                 />
                                             </div>
-                                            <h4 className="font-bold text-[21px] my-3 2xl:my-5">{it.name}</h4>
-                                            <p className="text-sm 2xl:text-base text-[#404040] leading-6 mb-5">{it.text}</p>
+                                            <h4 className="font-bold text-[21px] py-5 md:my-3 2xl:my-5">{it.name}</h4>
+                                            <p className="md:text-sm 2xl:text-base text-[#404040] leading-6 mb-5">{it.text}</p>
 
                                             <div className="mt-auto">
                                                 <Stars count={it.rating ?? 5} />
