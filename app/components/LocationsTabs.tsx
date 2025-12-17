@@ -91,12 +91,12 @@ function MelbourneTab() {
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2.5 md:gap-5">
+        <div className="flex items-center gap-2.5 md:gap-5">
           <a href="tel:1800010110" className="flex-none">
-            <Button variant="primary" className="custom-px-small-mobile">1800 010 110</Button>
+            <Button variant="primary" className="custom-px-small-mobile tracking-[0.7px]!">1800 010 110</Button>
           </a>
           <a href="" className="flex-1 md:flex-none">
-            <Button variant="secondary" className="custom-px-mobile w-full md:w-auto">GET DIRECTIONS</Button>
+            <Button variant="secondary" className="custom-px-mobile w-full md:w-auto tracking-[0.7px]!">GET DIRECTIONS</Button>
           </a>
         </div>
       </div>
