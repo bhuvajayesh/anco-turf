@@ -8,6 +8,7 @@ import CartIcon from "../../public/images/cart-icon.svg";
 import ToggleIcon from "../../public/images/menu-toggle-icon.svg";
 import ToggleCloseIcon from "../../public/images/menu-close-toggle-icon.svg";
 import Button from "./Button";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function Header() {
       <div className="relative bg-white rounded-bl-[70px] px-[30px] md:px-10 py-[19px] border-b border-[#5D9732]">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="">
+          <Link href="/" className="">
             <Image
               src={Logo}
               alt="Logo"
@@ -29,7 +30,7 @@ export default function Header() {
               height={51}
               className="w-auto h-[51px]"
             />
-          </div>
+          </Link>
 
           {/* Navigation */}
           <nav
