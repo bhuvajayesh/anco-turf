@@ -54,13 +54,14 @@ export default function LawnStep() {
                   height={495}
                   className="w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
-                <h3 className="absolute top-10 md:top-7 2xl:top-[43px] w-full text-center px-2 text-white text-[35px] md:text-2xl xl:text-3xl 2xl:text-[35px] font-bold leading-none uppercase">
+                <h3 className="z-1 absolute top-10 md:top-7 2xl:top-[43px] w-full text-center px-2 text-white text-[35px] md:text-2xl xl:text-3xl 2xl:text-[35px] font-bold leading-none uppercase">
                   {item.title.split(" ")[0]}{" "}
                   <span className="font-normal">
                     {item.title.split(" ").slice(1).join(" ")}
                   </span>
                 </h3>
               </div>
+              <div className="absolute top-0 left-0 w-full h-[48%] bg-[linear-gradient(180deg,rgba(0,0,0,0.5)_0%,rgba(0,0,0,0)_100%)]"></div>
               <div className="absolute -bottom-full group-hover:bottom-0 w-full h-[80%] bg-linear-to-t from-[#528917] from-27% to-[#528917]/0 p-2.5 flex flex-col justify-end transition-all duration-500 ease-out">
                 <p className="text-center leading-6 text-white mb-5">
                   {item.subtitle}
