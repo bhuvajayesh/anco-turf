@@ -79,4 +79,7 @@ img {
     padding-left: 8px;
     padding-right: 8px;
   }
+  .w-small-mobile {
+    width: 136px;
+  }
 }

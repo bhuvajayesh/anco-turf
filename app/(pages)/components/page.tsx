@@ -7,6 +7,35 @@ import Button from "@/app/components/Button";
 import Link from "next/link";
 import ComponentAccordion from "@/app/components/ComponentAccordion";
 import ComponentHoverCards from "@/app/components/ComponentHoverCards";
+import ComponentShopFilters from "@/app/components/ComponentShopFilters";
+import SearchInput from "@/app/components/SearchInput";
+import CustomSelect from "@/app/components/CustomSelect";
+import Breadcrumb from "@/app/components/Breadcrumb";
+import CartItem from "@/app/components/CartItem";
+import productCard1 from "@/public/images/cart-item.jpg";
+import ProjectImageCard from "@/app/components/ProjectImageCard";
+import projectImg from "@/public/images/project-pic.jpg";
+import ProductGallery from "@/app/components/ProductGallery";
+import badge from "@/public/images/product-badge.svg";
+import img1 from "@/public/images/product-gallery-pic1.jpg";
+import img2 from "@/public/images/product-gallery-pic2.jpg";
+import img3 from "@/public/images/product-gallery-pic3.jpg";
+import img4 from "@/public/images/product-gallery-pic4.jpg";
+import img5 from "@/public/images/product-gallery-pic5.jpg";
+import img6 from "@/public/images/product-gallery-pic6.jpg";
+import img7 from "@/public/images/product-gallery-pic7.jpg";
+import img8 from "@/public/images/product-gallery-pic8.png";
+import img9 from "@/public/images/product-gallery-pic9.jpg";
+import img10 from "@/public/images/product-gallery-pic10.jpg";
+import SitemapLinks from "@/app/components/SitemapLinks";
+
+const sortOptions = [
+  { label: "Sort By Popularity", value: "popularity" },
+  { label: "Sort By Average Rating", value: "rating" },
+  { label: "Sort By Latest", value: "latest" },
+  { label: "Sort By Price: Low To High", value: "price_low" },
+  { label: "Sort By Price: High To Low", value: "price_high" },
+];
 
 export default function Home() {
   return (
@@ -116,6 +145,51 @@ export default function Home() {
       </div>
       <div className="mt-20">
         <ComponentHoverCards />
+      </div>
+      <div className="mt-20">
+        <ComponentShopFilters />
+      </div>
+      <div className="mt-20">
+        <SearchInput />
+      </div>
+      <div className="mt-20">
+        <CustomSelect options={sortOptions} />
+      </div>
+      <div className="mt-20">
+        <Breadcrumb
+          title="Breadcrumb"
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Turf", href: "/turf" },
+            { label: "Sir Walter DNA Certified Buffalo" },
+          ]}
+        />
+      </div>
+      <div className="mt-20">
+        <CartItem
+          image={productCard1}
+          title="TifTuf Bermuda Hybrid Couch"
+          unitPrice="15.95"
+          initialQuantity={100}
+          unit="m²"
+          totalPrice="$1,595.00"
+          onRemove={() => console.log("remove")}
+        />
+      </div>
+      <div className="mt-20">
+        <ProjectImageCard
+          image={projectImg}
+          title="Sir Walter, Captured Landscapes - Parkdale Project"
+        />
+      </div>
+      <div className="mt-20">
+        <ProductGallery
+          images={[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10]}
+          badge={badge}
+        />
+      </div>
+      <div className="mt-20">
+        <SitemapLinks />
       </div>
     </div>
   );

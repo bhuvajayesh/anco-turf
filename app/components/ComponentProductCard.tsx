@@ -7,6 +7,7 @@ import productCardHover1 from "../../public/images/product-card-pic1-hover.jpg";
 import productCardHover2 from "../../public/images/product-card-pic2-hover.jpg";
 import Button from "./Button";
 import { useState } from "react";
+import QuantityCounter from "./ComponentCount";
 
 const productCard = [
   {
@@ -148,35 +149,16 @@ export default function ComponentProductCard() {
               </div>
 
               <div className="flex items-center justify-between gap-5 xl:gap-3 2xl:gap-5">
-                {/* COUNTER + BUTTON */}
-                <div className="flex-1 md:flex-none xl:flex-1 border border-[#5D9732] rounded-lg flex items-center justify-between py-[19px] px-[30px] xl:px-4 2xl:px-[30px]">
-                  <button
-                    onClick={() =>
-                      setValues((prev) => ({
-                        ...prev,
-                        [index]: Math.max(1, (prev[index] ?? 1) - 1),
-                      }))
-                    }
-                    className="text-[#5D9732] text-lg leading-5 font-medium"
-                  >
-                    -
-                  </button>
-                  <div className="text-[#5D9732] text-lg font-medium leading-5 flex-1 text-center">
-                    {values[index] ?? 1}
-                    {item.priceType === "text" && item.unit}
-                  </div>
-                  <button
-                    onClick={() =>
-                      setValues((prev) => ({
-                        ...prev,
-                        [index]: (prev[index] ?? 1) + 1,
-                      }))
-                    }
-                    className="text-[#5D9732] text-lg leading-5 font-medium"
-                  >
-                    +
-                  </button>
-                </div>
+                <QuantityCounter
+                  value={values[index] ?? 1}
+                  unit={item.priceType === "text" ? item.unit : undefined}
+                  onChange={(val) =>
+                    setValues((prev) => ({
+                      ...prev,
+                      [index]: val,
+                    }))
+                  }
+                />
                 <Button
                   variant="secondary"
                   className="flex-1 md:flex-none px-4! 2xl:px-[30px]!"
