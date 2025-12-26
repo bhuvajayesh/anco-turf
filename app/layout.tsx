@@ -3,6 +3,7 @@ import "./fonts.css";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,12 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="">
-        <Header />
-        <div className="content-area">
-          {children}
-        </div>
-        <Footer />
+      <body className="" cz-shortcut-listen="true">
+        <Providers>
+          <Header />
+          <div className="content-area">{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

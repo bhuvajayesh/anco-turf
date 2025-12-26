@@ -34,16 +34,22 @@ export default function Header() {
 
           {/* Navigation */}
           <nav
-            className={`items-center gap-4 2xl:gap-10 text-sm 2xl:text-[15px] font-bold tracking-[1.5px] uppercase xl:flex xl:transition-none ${isMenuOpen
-              ? "flex flex-col items-start fixed top-0 right-0 h-full bg-white border-l border-[#5D9732] py-4 px-6 transition-all duration-300 ease-in-out transform translate-x-0 opacity-100"
-              : "hidden xl:opacity-100 xl:translate-x-0 transition-all duration-300 ease-in-out transform translate-x-full opacity-0"
-              }`}
+            className={`items-center gap-4 2xl:gap-10 text-sm 2xl:text-[15px] font-bold tracking-[1.5px] uppercase xl:flex xl:transition-none ${
+              isMenuOpen
+                ? "flex flex-col items-start fixed top-0 right-0 h-full bg-white border-l border-[#5D9732] py-4 px-6 transition-all duration-300 ease-in-out transform translate-x-0 opacity-100"
+                : "hidden xl:opacity-100 xl:translate-x-0 transition-all duration-300 ease-in-out transform translate-x-full opacity-0"
+            }`}
           >
             <button
               className="w-5 aspect-square xl:hidden flex items-center justify-center self-end transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              <Image src={ToggleCloseIcon} alt="Toggle" width={20} height={20} />
+              <Image
+                src={ToggleCloseIcon}
+                alt="Toggle"
+                width={20}
+                height={20}
+              />
             </button>
             <a href="#" className="hover:text-[#5D9732] transition-colors">
               Turf
@@ -79,7 +85,10 @@ export default function Header() {
             <button className="w-5 aspect-square cursor-pointer">
               <Image src={CartIcon} alt="Cart" width={20} height={20} />
             </button>
-            <Button variant="primary" className="tracking-[0.7px]! py-[18px]! hidden lg:inline-block">
+            <Button
+              variant="primary"
+              className="tracking-[0.7px]! py-[18px]! hidden lg:inline-block"
+            >
               1800 010 110
             </Button>
             <button
